@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import os
 import glob
 
-
 """
 É suposto que os arquivos '.csv' serão padronizados com a seguinte nomenclatura: 
 
@@ -13,41 +12,6 @@ import glob
 
 Logo, é possível generalizar quais arquivos são selecionados pelos seguintes segmentos: Estado, Ano e Mês.
 """
-
-# função para renomear os arquivos de maneira sistemática
-def renomear_mes(dir_path) -> None:
-    
-    
-    # dicionário
-    meses = {'JAN': '01', 'FEV': '02', 'MAR': '03', 'ABR': '04', 'MAI': '05', 'JUN': '06', 'JUL': '07',
-              'AGO': '08', 'SET': '09', 'OUT': '10', 'NOV': '11', 'DEZ': '12'}
-    
-    files = []
-    # intera sobre os arquivos da pasta
-    try:
-        for file_name in os.listdir(dir_path):
-            if file_name.endswith('.csv'):
-                # mantém o nome antigo para renomeação depois
-                old_file_name = file_name
-                # removendo a extensão .csv
-                file_name = file_name[:-4]
-                # separa o arquivo por seus 'componentes principais'
-                file_parts = file_name.split('_')
-                # captura a parte do mês
-                mes_abrev = file_parts[3]
-                # retorna o nome com a numeração dada pelo dicionário
-                file_parts[3] = meses[mes_abrev]
-                # junta o novo nome e ordenando pelo mês
-                new_file_name = '_'.join(file_parts) + '.csv'
-                # renomeia os arquivos
-                os.rename(os.path.join(dir_path, old_file_name), os.path.join(dir_path, new_file_name))
-                files.append(new_file_name)
-        
-        return files
-                
-    except KeyError:
-        print('Arquivo não encontrado. Checar se já não foi renomeado. \n')
-        return None
 
 # função para o plot da pivot_table
 def plota_pivot_table(df, value, index, func, y_label, x_label, opcao='nada'):
@@ -65,7 +29,7 @@ def plota_pivot_table(df, value, index, func, y_label, x_label, opcao='nada'):
     plt.xlabel(x_label)
     
     return None
-
+        
 # nome da pasta onde estão os arquivos
 while True:
     try:
@@ -75,21 +39,31 @@ while True:
     except:
         print('Entrada inválida, tente novamente.')
 
-# renomeia os arquivos presentes na pasta de destino input
-renomear_mes(input_dir)
-
 # mudança até a pasta input
 os.chdir(input_dir)
 
 # captura o nome dos novos arquivos
 csv_files = sorted(glob.glob('*.csv'))
+print('Arquivos disponíveis:\n')
 for index, file_name in enumerate(csv_files):
-    print(f'{index+1}. {file_name}')
+    if file_name.endswith('.csv'):
+        print(f'{index+1}. {file_name}')
 
 # o usuário seleciona os arquivos a serem carregados
-print('Digite o número do(s) arquivo(s) a serem carregados, separados por vírgula: Aperte ENTER para concluir.')
-selected_files = input('> ').split(',')
-selected_indices = [int(index) - 1 for index in selected_files]
+print('Digite a abreviação do mês dos arquivos a serem carregados, separados por vírgula.' 
+        'Aperte ENTER para concluir.')
+selected_months = input('> ').split(',')
+selected_indices = []
+for index, file_name in enumerate(csv_files):
+    if file_name.endswith('.csv'):
+        # separa o arquivo por seus 'componentes principais'
+        file_parts = file_name[:-4].split('_')
+        # captura a abreviação do mês
+        mes_abrev = file_parts[3]
+        # verifica se o mês atual está entre os selecionados pelo usuário
+        if mes_abrev.upper() in selected_months:
+            selected_indices.append(index)
+
 
 # limpa a tela
 os.system('cls' if os.name == 'nt' else 'clear')
