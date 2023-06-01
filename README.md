@@ -26,7 +26,7 @@ Cada projeto possui um diretório próprio contendo um arquivo `codigo.py` e um 
 Para executar um projeto específico, siga as etapas abaixo:
 
 1. Navegue até o diretório do projeto desejado: `cd projetoX`.
-2. Execute o arquivo `codigo.py` usando o interpretador Python: `python codigo.py`.
+2. Execute o arquivo `codigo.py` usando o interpretador Python: `python codigo.py`. Ou execute o arquivo `Jupyter Notebook .ipynb`.
 
 Certifique-se de ter instalado as bibliotecas necessárias listadas nos pré-requisitos antes de executar os projetos.
 
