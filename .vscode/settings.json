@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./atividade_34_regressao_iii/funcoes"
+    ]
+}
