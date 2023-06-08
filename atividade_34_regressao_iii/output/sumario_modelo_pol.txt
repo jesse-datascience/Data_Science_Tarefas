@@ -1,0 +1,35 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  renda   R-squared:                       0.397
+Model:                            OLS   Adj. R-squared:                  0.397
+Method:                 Least Squares   F-statistic:                 1.546e+04
+Date:                Wed, 07 Jun 2023   Prob (F-statistic):               0.00
+Time:                        21:18:16   Log-Likelihood:            -2.6711e+06
+No. Observations:              211153   AIC:                         5.342e+06
+Df Residuals:                  211143   BIC:                         5.342e+06
+Df Model:                           9                                         
+Covariance Type:            nonrobust                                         
+=================================================================================================
+                                    coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+Intercept                      7252.7702   1096.751      6.613      0.000    5103.166    9402.374
+sexo_M[T.True]                -3245.3864    384.704     -8.436      0.000   -3999.396   -2491.377
+posse_de_imovel_True[T.True]   5162.2026    353.648     14.597      0.000    4469.061    5855.344
+posse_de_veiculo_True[T.True]   101.9699    367.581      0.277      0.781    -618.480     822.419
+qtd_filhos                     1846.2229    495.948      3.723      0.000     874.177    2818.268
+qt_pessoas_residencia         -1503.8598    404.214     -3.720      0.000   -2296.109    -711.610
+idade                          -111.8229     16.993     -6.581      0.000    -145.128     -78.517
+I(tempo_emprego)               3073.1801    138.658     22.164      0.000    2801.414    3344.946
+I(tempo_emprego ** 2)          -302.7476     10.564    -28.658      0.000    -323.453    -282.042
+I(tempo_emprego ** 3)            17.7025      0.216     82.009      0.000      17.279      18.126
+==============================================================================
+Omnibus:                   495464.298   Durbin-Watson:                   1.932
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):      11856311550.282
+Skew:                          23.144   Prob(JB):                         0.00
+Kurtosis:                    1162.942   Cond. No.                     4.05e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.05e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
