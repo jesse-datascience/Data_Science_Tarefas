@@ -1,39 +1,39 @@
-# Projetos de Aprendizado de Máquina em Python
+# Machine Learning Projects in Python
 
-Este repositório contém uma coleção de projetos em Python que utilizam técnicas de Aprendizado de Máquina.
+This repository contains a collection of Python projects utilizing Machine Learning techniques.
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de executar os códigos deste repositório, certifique-se de ter os seguintes requisitos instalados:
+Before running the code in this repository, make sure you have the following requirements installed:
 
-- Python (versão 3.11)
-- Bibliotecas Python:
+- Python (version 3.11)
+- Python Libraries:
   - scikit-learn
-  - numpy 
-  - pandas 
-  - matplotlib 
+  - numpy
+  - pandas
+  - matplotlib
   - seaborn
   - statsmodel
   - scipy
   - plotly
 
-## Estrutura do diretório
+## Directory Structure
 
-Cada projeto possui um diretório próprio contendo um arquivo `codigo.py` e um arquivo de dados (`dados.csv`, por exemplo). O arquivo `codigo.py` contém o código-fonte em Python que implementa as técnicas de Aprendizado de Máquina usando as bibliotecas mencionadas.
+Each project has its own directory containing a `code.py` file and a data file (such as `data.csv`). The `code.py` file contains the Python source code that implements the Machine Learning techniques using the mentioned libraries.
 
-## Como executar os projetos
+## How to Run the Projects
 
-Para executar um projeto específico, siga as etapas abaixo:
+To run a specific project, follow the steps below:
 
-1. Navegue até o diretório do projeto desejado: `cd projetoX`.
-2. Execute o arquivo `codigo.py` usando o interpretador Python: `python codigo.py`. Ou execute o arquivo `Jupyter Notebook .ipynb`.
+1. Navigate to the desired project's directory: `cd projectX`.
+2. Run the `code.py` file using the Python interpreter: `python code.py`, or run the `.ipynb` Jupyter Notebook file.
 
-Certifique-se de ter instalado as bibliotecas necessárias listadas nos pré-requisitos antes de executar os projetos.
+Make sure you have installed the required libraries listed in the prerequisites before running the projects.
 
-## Contribuição
+## Contribution
 
-Se você deseja contribuir para este repositório, fique à vontade para abrir uma "issue" ou enviar um "pull request". Sinta-se à vontade para adicionar mais projetos ou melhorar os existentes.
+If you'd like to contribute to this repository, feel free to open an issue or submit a pull request. You're welcome to add new projects or improve existing ones.
 
-## Autor
+## Author
 
-Este repositório é mantido por Jesse Rodrigues, que estuda na EBAC (Escola Britânica de Artes Criativas) no curso profissionalizante de Ciência de Dados.
+This repository is maintained by Jesse Rodrigues, who studied at EBAC (British School of Creative Arts) in the professional Data Science course.
